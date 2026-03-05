@@ -1,0 +1,14 @@
+.btn {
+  width: fit-content;
+  background: green;
+  color: rgb(18, 18, 18);
+  padding: 10px;
+  border-radius: 8%;
+}
+
+.btnContainer {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
