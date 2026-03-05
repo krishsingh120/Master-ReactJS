@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ data, index }) => {
+const Card = ({ data }) => {
   console.log(data);
 
   return (
