@@ -32,6 +32,12 @@ const Navbar = () => {
               Users
             </Link>
           </li>
+
+           <li>
+            <Link className="link" to="/user/list">
+              UsersList
+            </Link>
+          </li>
         </ul>
       </div>
       <Outlet />

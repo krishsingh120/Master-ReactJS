@@ -19,8 +19,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/user" element={<Users />} />
-          <Route path="/user/:id" element={<UserDetails />} />
+          <Route path="/user/list?" element={<Users />} />
+          {/* <Route path="/user/list" element={<Users />} /> */}
+          <Route path="/user/:id/:name?" element={<UserDetails />} />
         </Route>
 
         {/* This is a prefix routes -> /auth/login | /auth/register */}
