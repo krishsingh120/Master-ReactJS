@@ -1,32 +1,37 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
-import Contact from "./pages/Contact";
-import Footer from "./components/Footer";
-import NotFound from "./pages/NotFound";
-import Men from "./pages/Men";
-import Women from "./pages/Women";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Auth from "./Pages/Auth";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import NotFound from "./Pages/NotFound";
+import Users from "./Pages/Users";
+import UserDetails from "./Pages/UserDetails";
 
 const App = () => {
   return (
-    <div className="h-screen w-full bg-gray-600 ">
-      <NavBar />
-
+    <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />}>
-          <Route path="men" element={<Men />} />
-          <Route path="women" element={<Women />} />
+        <Route element={<Navbar />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/user" element={<Users />} />
+          <Route path="/user/:id" element={<UserDetails />} />
         </Route>
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
 
-      <Footer />
+        {/* This is a prefix routes -> /auth/login | /auth/register */}
+        <Route path="/auth" element={<Auth />}>
+          {/* <Route path="login" element={<Login />} /> */}
+          <Route index element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+
+        <Route path="/*" element={<Navigate to="/" />} />
+      </Routes>
     </div>
   );
 };

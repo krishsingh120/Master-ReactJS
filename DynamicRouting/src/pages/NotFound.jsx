@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react'
 
 const NotFound = () => {
   return (
-    <div className="flex items-center justify-center">
-      <h1>404 Page | Not Found</h1>
-    </div>
-  );
-};
+    <div>
+            <h1>Not found | 404</h1>
 
-export default NotFound;
+    </div>
+  )
+}
+
+export default NotFound
